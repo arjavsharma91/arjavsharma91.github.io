@@ -1,9 +1,276 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Website</title>
-  </head>
-  <body>
-    <h1>Hello, world! My GitHub Pages site is live.</h1>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjav Sharma | Resume & Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --muted-text: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #0f172a;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--muted-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Section Global Styling */
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #0f172a;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Education & Details */
+        .edu-item, .project-item {
+            margin-bottom: 20px;
+        }
+
+        .space-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .institution, .project-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #0f172a;
+        }
+
+        .date, .gpa {
+            color: var(--muted-text);
+            font-size: 0.95rem;
+        }
+
+        /* Project Specifics */
+        .project-title a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .project-title a:hover {
+            text-decoration: underline;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--accent-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .project-desc {
+            margin-top: 5px;
+            color: #334155;
+        }
+
+        .project-desc li {
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Arjav Sharma</h1>
+            <div class="subtitle">Computer Science & Quantitative Finance Enthusiast</div>
+            <div class="contact-links">
+                <a href="https://github.com/arjavsharma91" target="_blank">🌐 GitHub (arjavsharma91)</a>
+                <a href="mailto:your.email@example.com">✉️ Email</a>
+            </div>
+        </header>
+
+        <!-- Education Section -->
+        <section>
+            <h2>Education</h2>
+            <div class="edu-item">
+                <div class="space-between">
+                    <span class="institution">Belmont High School</span>
+                    <span class="date">Class of 2029</span>
+                </div>
+                <div class="space-between">
+                    <span><strong>Relevant Coursework:</strong> AP Calculus BC, AP Physics 2</span>
+                    <span class="gpa"><strong>GPA:</strong> 3.96 / 4.00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Honors & Awards Section -->
+        <section>
+            <h2>Honors & Awards</h2>
+            <ul>
+                <li><strong>USACO Silver Division</strong> Competitor</li>
+                <li><strong>ACSL Senior Division Finalist</strong> — Scored 45/48 in qualifying rounds</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <h2>Projects Showcase</h2>
+
+            <!-- Project 1: decoint -->
+            <div class="project-item">
+                <div class="space-between">
+                    <span class="project-title">decoint — Python Library</span>
+                    <span class="tech-badge">Python / Algorithmic Trading</span>
+                </div>
+                <ul class="project-desc">
+                    <li>Developed an open-source Python library focused on mathematical decomposition and cointegration modeling for time-series data.</li>
+                    <li>Implemented high-performance backend algorithms to optimize pair-selection matrices, significantly cutting down computational overhead when testing large asset baskets.</li>
+                    <li>Solves the critical problem of structural break identification in financial time-series, allowing developers to isolate and trade true statistical arbitrage opportunities rather than temporary pricing anomalies.</li>
+                </ul>
+            </div>
+
+            <!-- Project 2: Econophysics vs Econometrics -->
+            <div class="project-item">
+                <div class="space-between">
+                    <span class="project-title">
+                        <a href="https://github.com/arjavsharma91/Econophysics-Econometrics-Comparison" target="_blank">
+                            Econophysics vs. Econometrics Comparison 🔗
+                        </a>
+                    </span>
+                    <span class="tech-badge">Quantitative Finance / Data Science</span>
+                </div>
+                <ul class="project-desc">
+                    <li>Engineered a comparative research framework validating market regime detection mechanisms to optimize mean-reversion trading strategies.</li>
+                    <li>Evaluated the **Econophysics paradigm** using the empirical Hurst Exponent coupled with dynamically rolling Z-scores to capture long-term memory structures in asset prices.</li>
+                    <li>Compared performance baselines directly against traditional **Econometrics approaches** utilizing Augmented Dickey-Fuller (ADF) tests paired with statistical Z-scores for stationary verification.</li>
+                    <li>Backtested both approaches on historical market datasets to mathematically determine which methodology yields more robust signals and limits false-positive entry points during regime shifts.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section>
+            <h2>School Activities</h2>
+            <div class="grid-2">
+                <div>
+                    <strong>Computer Science Club</strong>
+                    <p style="color: var(--muted-text); font-size: 0.95rem;">Active Member. Collaborate on algorithmic problem solving and development projects.</p>
+                </div>
+                <div>
+                    <strong>Model United Nations (Model UN)</strong>
+                    <p style="color: var(--muted-text); font-size: 0.95rem;">Active Member. Engage in geopolitical debate, strategic compromise, and policy writing.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
 </html>
