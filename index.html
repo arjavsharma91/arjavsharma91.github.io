@@ -3,274 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arjav Sharma | Resume & Portfolio</title>
+    <title>Arjav Sharma - Resume</title>
     <style>
-        :root {
-            --bg-color: #f8fafc;
-            --text-color: #1e293b;
-            --accent-color: #2563eb;
-            --accent-hover: #1d4ed8;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --muted-text: #64748b;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        /* Strict standard-print, plain text resume style */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 40px 20px;
+            font-family: "Times New Roman", Times, serif;
+            color: #000000;
+            background-color: #ffffff;
+            line-height: 1.35;
+            margin: 40px auto;
+            max-width: 750px;
+            padding: 0 20px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-        }
-
-        /* Header Section */
         header {
             text-align: center;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 25px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: #0f172a;
-            margin-bottom: 5px;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-links a {
-            color: var(--muted-text);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .contact-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Section Global Styling */
-        section {
-            margin-bottom: 35px;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-            color: #0f172a;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 15px;
-        }
-
-        li::before {
-            content: "•";
-            color: var(--accent-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Education & Details */
-        .edu-item, .project-item {
             margin-bottom: 20px;
         }
 
-        .space-between {
+        h1 {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 5px 0;
+            font-weight: normal;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .contact-info a {
+            color: #000000;
+            text-decoration: none;
+            border-bottom: 1px rgba(0,0,0,0.2) solid;
+        }
+
+        .contact-info a:hover {
+            border-bottom: 1px #000000 solid;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 1px;
+            margin: 15px 0 8px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .row {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-bottom: 4px;
         }
 
-        .institution, .project-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #0f172a;
+        .title-left {
+            font-weight: bold;
+            font-size: 14px;
         }
 
-        .date, .gpa {
-            color: var(--muted-text);
-            font-size: 0.95rem;
+        .title-right {
+            text-align: right;
+            font-size: 14px;
         }
 
-        /* Project Specifics */
-        .project-title a {
-            color: var(--accent-color);
-            text-decoration: none;
+        .sub-row {
+            font-size: 14px;
+            margin-bottom: 6px;
         }
 
-        .project-title a:hover {
-            text-decoration: underline;
+        ul {
+            margin: 4px 0 0 0;
+            padding-left: 20px;
         }
 
-        .tech-badge {
-            display: inline-block;
-            background-color: #eff6ff;
-            color: var(--accent-color);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 8px;
+        li {
+            font-size: 14px;
+            margin-bottom: 3px;
+            text-align: justify;
         }
 
-        .project-desc {
-            margin-top: 5px;
-            color: #334155;
-        }
-
-        .project-desc li {
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 640px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            body {
-                padding: 10px;
-            }
-            .container {
-                padding: 20px;
-            }
+        p {
+            font-size: 14px;
+            margin: 0;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <header>
+        <h1>Arjav Sharma</h1>
+        <div class="contact-info">
+            <a href="https://github.com" target="_blank">://github.com</a> &middot; 
+            <a href="mailto:your.email@example.com">your.email@example.com</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>Education</h2>
+        <div class="row">
+            <span class="title-left">Belmont High School</span>
+            <span class="title-right">Class of 2029</span>
+        </div>
+        <div class="sub-row">
+            <div class="row">
+                <span>Relevant Coursework: AP Calculus BC, AP Physics 2</span>
+                <span>GPA: 3.96 / 4.00</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Honors & Awards</h2>
+        <ul>
+            <li>ACSL Senior Division Finalist (Scored 45/48 in qualifying rounds)</li>
+            <li>USACO Silver Division Competitor</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Projects Showcase</h2>
         
-        <header>
-            <h1>Arjav Sharma</h1>
-            <div class="subtitle">Computer Science & Quantitative Finance Enthusiast</div>
-            <div class="contact-links">
-                <a href="https://github.com/arjavsharma91" target="_blank">🌐 GitHub (arjavsharma91)</a>
-                <a href="mailto:your.email@example.com">✉️ Email</a>
-            </div>
-        </header>
+        <!-- decoint library -->
+        <div class="row" style="margin-bottom: 2px;">
+            <span class="title-left">decoint (Python Library)</span>
+            <span class="title-right">Open Source</span>
+        </div>
+        <ul style="margin-bottom: 15px;">
+            <li>Developed an open-source Python software library implementing rigorous arithmetic and structural frameworks conforming to the IEEE 1788.1-2017 standard for simplified interval mathematics.</li>
+            <li>Featured globally in the <a href="https://na-digest.coecis.cornell.edu/na-digest-html/26/index.html" target="_blank">Numerical Analysis Digest (NA Digest)</a> for the Friday, July 24, 2026 issue.</li>
+            <li>Recognized as an official tool listed by the interval computations community repository at <a href="https://www.reliable-computing.org/" target="_blank">reliable-computing.org</a>.</li>
+            <li>Designed and structured underlying algorithmic data types to provide exact bounding of numerical ranges and mathematical computations with guaranteed numerical correctness.</li>
+        </ul>
 
-        <!-- Education Section -->
-        <section>
-            <h2>Education</h2>
-            <div class="edu-item">
-                <div class="space-between">
-                    <span class="institution">Belmont High School</span>
-                    <span class="date">Class of 2029</span>
-                </div>
-                <div class="space-between">
-                    <span><strong>Relevant Coursework:</strong> AP Calculus BC, AP Physics 2</span>
-                    <span class="gpa"><strong>GPA:</strong> 3.96 / 4.00</span>
-                </div>
-            </div>
-        </section>
+        <!-- Econphysics project -->
+        <div class="row" style="margin-bottom: 2px;">
+            <span class="title-left"><a href="https://github.com/Econophysics-Econometrics-Comparison" target="_blank" style="color: #000; text-decoration: none; border-bottom: 1px solid #000;">Econophysics vs. Econometrics Framework</a></span>
+            <span class="title-right">GitHub Repository</span>
+        </div>
+        <ul>
+            <li>Created a mathematical evaluation system directly comparing market regime detection efficiency for mean-reversion trading architectures.</li>
+            <li>Modeled the Econophysics engine using the empirical Hurst Exponent coupled with moving Z-scores to gauge structural memory signatures within noisy datasets.</li>
+            <li>Modeled the Econometrics engine utilizing traditional Augmented Dickey-Fuller (ADF) tests and statistical Z-scores to track active structural stationarity.</li>
+            <li>Tested and profiled both independent approaches using real backtests to determine which methodology minimizes statistical false positives during severe market transitions.</li>
+        </ul>
+    </section>
 
-        <!-- Honors & Awards Section -->
-        <section>
-            <h2>Honors & Awards</h2>
-            <ul>
-                <li><strong>USACO Silver Division</strong> Competitor</li>
-                <li><strong>ACSL Senior Division Finalist</strong> — Scored 45/48 in qualifying rounds</li>
-            </ul>
-        </section>
-
-        <!-- Projects Section -->
-        <section>
-            <h2>Projects Showcase</h2>
-
-            <!-- Project 1: decoint -->
-            <div class="project-item">
-                <div class="space-between">
-                    <span class="project-title">decoint — Python Library</span>
-                    <span class="tech-badge">Python / Algorithmic Trading</span>
-                </div>
-                <ul class="project-desc">
-                    <li>Developed an open-source Python library focused on mathematical decomposition and cointegration modeling for time-series data.</li>
-                    <li>Implemented high-performance backend algorithms to optimize pair-selection matrices, significantly cutting down computational overhead when testing large asset baskets.</li>
-                    <li>Solves the critical problem of structural break identification in financial time-series, allowing developers to isolate and trade true statistical arbitrage opportunities rather than temporary pricing anomalies.</li>
-                </ul>
-            </div>
-
-            <!-- Project 2: Econophysics vs Econometrics -->
-            <div class="project-item">
-                <div class="space-between">
-                    <span class="project-title">
-                        <a href="https://github.com/arjavsharma91/Econophysics-Econometrics-Comparison" target="_blank">
-                            Econophysics vs. Econometrics Comparison 🔗
-                        </a>
-                    </span>
-                    <span class="tech-badge">Quantitative Finance / Data Science</span>
-                </div>
-                <ul class="project-desc">
-                    <li>Engineered a comparative research framework validating market regime detection mechanisms to optimize mean-reversion trading strategies.</li>
-                    <li>Evaluated the **Econophysics paradigm** using the empirical Hurst Exponent coupled with dynamically rolling Z-scores to capture long-term memory structures in asset prices.</li>
-                    <li>Compared performance baselines directly against traditional **Econometrics approaches** utilizing Augmented Dickey-Fuller (ADF) tests paired with statistical Z-scores for stationary verification.</li>
-                    <li>Backtested both approaches on historical market datasets to mathematically determine which methodology yields more robust signals and limits false-positive entry points during regime shifts.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Activities Section -->
-        <section>
-            <h2>School Activities</h2>
-            <div class="grid-2">
-                <div>
-                    <strong>Computer Science Club</strong>
-                    <p style="color: var(--muted-text); font-size: 0.95rem;">Active Member. Collaborate on algorithmic problem solving and development projects.</p>
-                </div>
-                <div>
-                    <strong>Model United Nations (Model UN)</strong>
-                    <p style="color: var(--muted-text); font-size: 0.95rem;">Active Member. Engage in geopolitical debate, strategic compromise, and policy writing.</p>
-                </div>
-            </div>
-        </section>
-
-    </div>
+    <section>
+        <h2>School Activities</h2>
+        <ul>
+            <li>Computer Science Club &ndash; Active Member</li>
+            <li>Model United Nations (Model UN) &ndash; Active Member</li>
+        </ul>
+    </section>
 
 </body>
 </html>
