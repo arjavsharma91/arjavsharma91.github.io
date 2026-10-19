@@ -94,6 +94,24 @@
             font-size: 14px;
             margin: 0;
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin: 6px 0 8px 0;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 3px 6px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -127,7 +145,6 @@
             <li>USACO Silver Division Competitor</li>
             <li>Model UN Best Delegate Award: UMASS Model UN</li>
             <li>Model UN Best Delegate Award: St. Johns Prep Model UN</li>
-            <li>Financial Modeling and Valuation Certification - Corporate Finance Institute</li>
         </ul>
     </section>
 
@@ -158,16 +175,43 @@
             <li>Determined the exact step where all trajectory predictability is lost (&Delta;x = 1.0) under chaotic settings (r = 4.0), while demonstrating bound convergence down to standard floating-point limits (~10<sup>-16</sup>) under stable settings.</li>
         </ul>
 
-        <!-- Econphysics project -->
+        <!-- v4q128 Project -->
         <div class="row" style="margin-bottom: 2px;">
-            <span class="title-left"><a href="https://github.com/arjavsharma91/Econophysics-Econometrics-Comparison" target="_blank" style="color: #000; text-decoration: none; border-bottom: 1px solid #000;">Econophysics vs. Econometrics Framework</a></span>
-            <span class="title-right">GitHub Repository</span>
+            <span class="title-left">v4q128</span>
+            <span class="title-right">C++ / AVX2</span>
         </div>
         <ul>
-            <li>Created a mathematical evaluation system directly comparing market regime detection efficiency for mean-reversion trading architectures.</li>
-            <li>Modeled the Econophysics engine using the empirical Hurst Exponent coupled with moving Z-scores to gauge structural memory signatures within noisy datasets.</li>
-            <li>Modeled the Econometrics engine utilizing traditional Augmented Dickey-Fuller (ADF) tests and statistical Z-scores to track active structural stationarity.</li>
-            <li>Tested and profiled both independent approaches using real backtests to determine which methodology minimizes statistical false positives during severe market transitions.</li>
+            <li>Engineered an experimental 4-lane AVX2 SIMD Q64.64 fixed-point math library; archived after extensive benchmarking demonstrated manual vectorization overhead surpassed modern compiler scalar optimization for 128-bit fixed-point math.</li>
+            <li><strong>Performance Findings:</strong>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th>AVX2 SIMD vs. Scalar</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Addition / Subtraction</td>
+                            <td>0.95x</td>
+                            <td>Compiler auto-vectorization and scalar loops win due to register pressure.</td>
+                        </tr>
+                        <tr>
+                            <td>Multiplication</td>
+                            <td>1.3x</td>
+                            <td>Insufficient gain to justify dual-limb SoA complexity.</td>
+                        </tr>
+                        <tr>
+                            <td>Variable Shifts (shl, sra)</td>
+                            <td>~1.0x</td>
+                            <td>High complexity for zero net gain.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li><strong>Failure Root Cause Analysis:</strong> Identified that AVX2 lacks native 128-bit integer registers and cross-lane carry support, forcing split hi/lo limb emulation with heavy shuffle, <code>vpermq</code>, and unpack overhead that neutralizes SIMD throughput, while modern LLVM/GCC compilers auto-vectorize scalar code without register-allocation bottlenecks.</li>
+            <li><strong>Salvageable Components:</strong> Built a standalone 128-bit variable shift engine with branchless carry-handling (<code>shl_var</code>, <code>srl_var</code>, <code>sra_var</code>), custom arithmetic right shifts missing in the AVX2 instruction set, and a high-precision float/double conversion pipeline leveraging 2<sup>64</sup> bias factors and unsigned sign-bit manipulation.</li>
         </ul>
     </section>
 
@@ -175,18 +219,18 @@
         <h2>In Progress</h2>
         
         <div class="row" style="margin-bottom: 2px;">
-            <span class="title-left">128-Bit Fixed-Point SIMD Vectorization Tool</span>
+            <span class="title-left">AVX2 Bitsliced SIMON 64/128 Encryption Engine</span>
             <span class="title-right">C++ / AVX2</span>
         </div>
         <ul>
-            <li>Building a multi-element SIMD vectorization tool for 128-bit precision fixed-point math in C++, leveraging AVX2 registers to maximize computational throughput and parallel execution efficiency.</li>
+            <li>Developing a high-throughput AVX2 bitsliced SIMON 64/128 lightweight block cipher encryption engine optimized to maximize parallel throughput, targeting performance benchmarks superior to the standard C++ Crypto++ implementation.</li>
         </ul>
     </section>
 
     <section>
         <h2>School Activities</h2>
         <ul>
-            <li>Computer Science Club &ndash; Active Member</li>
+            <li>Computer Science Club &ndash; Co-Captain</li>
             <li>Model United Nations (Model UN) &ndash; Active Member</li>
         </ul>
     </section>
