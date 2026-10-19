@@ -211,7 +211,6 @@
                 </table>
             </li>
             <li><strong>Failure Root Cause Analysis:</strong> Identified that AVX2 lacks native 128-bit integer registers and cross-lane carry support, forcing split hi/lo limb emulation with heavy shuffle, <code>vpermq</code>, and unpack overhead that neutralizes SIMD throughput, while modern LLVM/GCC compilers auto-vectorize scalar code without register-allocation bottlenecks.</li>
-            <li><strong>Salvageable Components:</strong> Built a standalone 128-bit variable shift engine with branchless carry-handling (<code>shl_var</code>, <code>srl_var</code>, <code>sra_var</code>), custom arithmetic right shifts missing in the AVX2 instruction set, and a high-precision float/double conversion pipeline leveraging 2<sup>64</sup> bias factors and unsigned sign-bit manipulation.</li>
         </ul>
     </section>
 
